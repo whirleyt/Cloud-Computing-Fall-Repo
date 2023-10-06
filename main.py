@@ -32,7 +32,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 def get_data_service():
 
     config = {
-        "data_directory": "/Users/donaldferguson/Dropbox/0-Examples/e6156-f23-template/data",
+        "data_directory": "data",
         "data_file": "students.json"
     }
 
@@ -63,8 +63,14 @@ schools_resource = SchoolsResource(config={"students_resource": students_resourc
 async def root():
     return RedirectResponse("/static/index.html")
 
+@app.get("/api")
+async def api():
+    """
+    Redirects to FastAPI Documentation.
+    """
+    return RedirectResponse("/docs")
 
-@app.get("/students", response_model=List[StudentRspModel])
+@app.get("/api/students", response_model=List[StudentRspModel])
 async def get_students(uni: str = None, last_name: str = None, school_code: str = None):
     """
     Return a list of students matching a query string.
@@ -77,7 +83,7 @@ async def get_students(uni: str = None, last_name: str = None, school_code: str 
     return result
 
 
-@app.get("/students/{uni}", response_model=Union[StudentRspModel, None])
+@app.get("/api/students/{uni}", response_model=Union[StudentRspModel, None])
 async def get_student(uni: str):
     """
     Return a student based on UNI.
@@ -94,7 +100,7 @@ async def get_student(uni: str):
     return result
 
 
-@app.get("/schools", response_model=List[SchoolRspModel])
+@app.get("/api/schools", response_model=List[SchoolRspModel])
 async def get_schools():
     """
     Return a list of schools.
@@ -103,7 +109,7 @@ async def get_schools():
     return result
 
 
-@app.get("/schools/{school_code}/students", response_model=List[StudentRspModel])
+@app.get("/api/schools/{school_code}/students", response_model=List[StudentRspModel])
 async def get_schools_students(school_code, uni=None, last_name=None):
     """
     Return a list of schools.
@@ -115,4 +121,4 @@ async def get_schools_students(school_code, uni=None, last_name=None):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8011)
+    uvicorn.run("main:app", host="0.0.0.0", port=8011, reload=True)
