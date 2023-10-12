@@ -18,6 +18,7 @@ from resources.students.students_data_service import StudentDataService
 from resources.students.student_models import StudentModel, StudentRspModel
 from resources.schools.school_models import SchoolRspModel, SchoolModel
 from resources.schools.schools_resource import SchoolsResource
+from resources.database.database_data_service import DatabaseDataService
 
 app = FastAPI()
 
