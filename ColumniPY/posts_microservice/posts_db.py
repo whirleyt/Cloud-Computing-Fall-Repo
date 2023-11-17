@@ -1,7 +1,6 @@
 import psycopg2
-from db_config import posts_db_connection_string
 
-conn = psycopg2.connect(posts_db_connection_string)
+conn = psycopg2.connect('https://icy-tree-030c60010.4.azurestaticapps.net/')
 cur = conn.cursor()
 
 cur.execute("""

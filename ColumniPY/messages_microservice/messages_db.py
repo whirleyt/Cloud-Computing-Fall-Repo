@@ -1,8 +1,6 @@
 import psycopg2
-from db_config import messages_db_connection_string
 
-
-conn = psycopg2.connect(messages_db_connection_string)
+conn = psycopg2.connect('https://messages-microservice.ue.r.appspot.com/')
 cur = conn.cursor()
 
 cur.execute("""
