@@ -1,0 +1,88 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Adjust as needed */
+}
+
+mat-card {
+  max-width: 500px;
+  text-align: center;
+  border-radius: 16px; /* Adjust as needed */
+  overflow: hidden;
+  background-color: #2196f3; /* Primary Color - Adjust as needed */
+  color: #FFFFFF;
+  margin-bottom: 1em; /* Adjust margin to separate the card and the "New User?" section */
+}
+
+mat-card-header {
+  border-bottom: 2px solid #90caf9; /* Light Blue - Adjust as needed */
+  padding: 1em;
+  color: #FFFFFF;
+}
+
+mat-card-content {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #81d4fa; /* Light Blue - Adjust as needed */
+  border-radius: 0 0 16px 16px; /* Bottom corners curved, top straight */
+  padding: 1em;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+form {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  color: #FFFFFF;
+}
+
+input {
+  width: calc(100% - 1em);
+  padding: 0.5em;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid #90caf9;
+}
+
+.login {
+  background-color: #1e88e5;
+  color: #fff;
+  padding: 0.7em 1.5em;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button:disabled {
+  background-color: '';
+  cursor: not-allowed;
+}
+
+.new-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: inline;
+}
+
+.new-user mat-label {
+  margin-bottom: 0.5em;
+  display: inline;
+}
+
+.new-user button {
+  display: inline;
+}
+
