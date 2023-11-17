@@ -1,7 +1,6 @@
 import psycopg2
-from db_config import users_db_connection_string
 
-conn = psycopg2.connect(users_db_connection_string)
+conn = psycopg2.connect('http://ec2-3-217-79-42.compute-1.amazonaws.com:8011/')
 cur = conn.cursor()
 
 cur.execute("""
