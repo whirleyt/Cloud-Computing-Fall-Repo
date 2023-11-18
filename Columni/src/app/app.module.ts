@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -46,7 +48,9 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule,
+    MatDatepickerModule
   ],
   providers: [
 //     MessageService,
