@@ -1,12 +1,25 @@
+
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
+    background-color: #90caf9;
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+  }
 
-.content {
-  padding-top: 30px;
-}
+  .header button {
+    margin-right: 10px; /* Adjust as needed */
+  }
 
+  .header button:hover {
+    background-color: #64b5f6; /* Header highlight color */
+  }
+
+  .content {
+    margin-top: 60px; /* Adjust based on your header height */
+    padding: 20px;
+  }

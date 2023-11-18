@@ -23,7 +23,7 @@ mat-card-header {
 }
 
 mat-card-content {
-  max-height: 300px; /* Adjust max-height as needed */
+  max-height: 300px;
   width: 100%;
   box-sizing: border-box;
   background-color: #FFFFFF;
@@ -33,7 +33,7 @@ mat-card-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto; /* Add scrollbar for overflow */
+  overflow-y: auto;
 }
 
 form {

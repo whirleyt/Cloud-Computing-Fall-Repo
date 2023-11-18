@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class JobPostComponent implements OnInit {
   currentPage: number = 1;
-  postTypeID: number= 2;
+  postTypeID: number = 2;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -23,4 +23,6 @@ export class JobPostComponent implements OnInit {
   fetchPosts(): void {
     console.log("postTypeID:"+ this.postTypeID+", page:"+ this.currentPage);
   }
+
+
 }
