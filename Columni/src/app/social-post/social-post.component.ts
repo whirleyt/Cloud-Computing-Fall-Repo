@@ -51,5 +51,6 @@ export class SocialPostComponent implements OnInit {
 
     savePost(){
       console.log("new post content: "+ this.newPostContent);
+      this.newPostContent= '';
     }
 }

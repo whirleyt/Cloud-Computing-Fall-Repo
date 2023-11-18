@@ -9,15 +9,15 @@
 mat-card {
   max-width: 500px;
   text-align: center;
-  border-radius: 16px; /* Adjust as needed */
+  border-radius: 16px;
   overflow: hidden;
-  background-color: #2196f3; /* Primary Color - Adjust as needed */
+  background-color: #2196f3;
   color: #FFFFFF;
-  margin-bottom: 1em; /* Adjust margin to separate the card and the "New User?" section */
+  margin-bottom: 1em;
 }
 
 mat-card-header {
-  border-bottom: 2px solid #90caf9; /* Light Blue - Adjust as needed */
+  border-bottom: 2px solid #90caf9;
   padding: 1em;
   color: #FFFFFF;
 }
@@ -25,8 +25,8 @@ mat-card-header {
 mat-card-content {
   width: 100%;
   box-sizing: border-box;
-  background-color: #81d4fa; /* Light Blue - Adjust as needed */
-  border-radius: 0 0 16px 16px; /* Bottom corners curved, top straight */
+  background-color: #90caf9;
+  border-radius: 0 0 16px 16px;
   padding: 1em;
   color: #FFFFFF;
   display: flex;
