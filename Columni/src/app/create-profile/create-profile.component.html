@@ -1,0 +1,73 @@
+
+<div class="card-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Create Columni User Profile</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form #profileForm="ngForm">
+        <!-- User Information Fields -->
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>First Name:</mat-label>
+          <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstName" matInput required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Last Name:</mat-label>
+          <input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastName" matInput required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Columbia Email:</mat-label>
+          <input type="email" id="columbiaEmail" name="columbiaEmail" [(ngModel)]="user.columbiaEmail" matInput required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Password:</mat-label>
+          <input type="password" id="password" name="password" [(ngModel)]="user.password" matInput required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>School:</mat-label>
+          <mat-select id="schoolID" name="schoolID" [(ngModel)]="user.schoolID" required>
+            <mat-option *ngFor="let school of schoolOptions" [value]="school.schoolID">
+              {{ school.schoolName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Major:</mat-label>
+          <input type="text" id="major" name="major" [(ngModel)]="user.major" matInput required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Job Title:</mat-label>
+          <input type="text" id="jobTitle" name="jobTitle" [(ngModel)]="user.jobTitle" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Company:</mat-label>
+          <input type="text" id="company" name="company" [(ngModel)]="user.company" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>Graduation Year:</mat-label>
+          <mat-select id="graduationYear" name="graduationYear" [(ngModel)]="user.graduationYear" required>
+            <mat-option *ngFor="let year of graduationYearOptions" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="custom-form-field">
+          <mat-label>User Description:</mat-label>
+          <textarea id="userDescription" name="userDescription" [(ngModel)]="user.userDescription" matInput></textarea>
+        </mat-form-field>
+
+        <button class="save-profile" (click)="saveProfile()" [disabled]="profileForm.invalid">Save Profile</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <div class="back-button">
+    <button mat-button (click)="returnToLogin()">Return to Login</button>
+    </div>
+</div>

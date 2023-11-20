@@ -1,0 +1,21 @@
+<div class="post-container">
+    <button *ngIf="displayedPosts.length > 0" mat-button (click)="createPost()">Create Post</button>
+  <div *ngIf="isPost" class="create-post-form">
+    <textarea id="postContent" name="postContent" [(ngModel)]="newPostContent" required></textarea>
+    <button *ngIf="isPost" mat-button (click)="savePost()">Save</button>
+  </div>
+  <div class="post-list">
+    <div *ngFor="let post of displayedPosts" class="post-item">
+      <div class="post-header">
+        <div class="post-name">{{ post.firstName }} {{ post.lastName }}</div>
+        <div class="post-date">{{ post.creationDT | date: 'medium' }}</div>
+      </div>
+      <div class="post-content">{{ post.postContent }}</div>
+    </div>
+  </div>
+<div>
+  <button routerLink="../{{currentPage - 1}}" *ngIf="currentPage > 1" mat-button>Previous Page</button>
+  <label mat-label>Page {{currentPage}}</label>
+  <button [routerLink]="['../', currentPage + 1]" mat-button>Next Page</button>
+</div>
+</div>
