@@ -1,3 +1,12 @@
+from flask import Flask, request, jsonify
+import psycopg2
+
+app = Flask(__name__)
+
+POSTS_URL = 'https://posts-microservice.ue.r.appspot.com/'
+
+PAGE_SIZE = 10
+
 class PostModel(BaseModel):
     userPostID: int
     userID: int
