@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Auth } from 'aws-amplify';
+import { AuthError, signUp } from '@aws-amplify/auth';
 
 @Component({
   selector: 'app-create-profile',
@@ -47,7 +47,10 @@ export class CreateProfileComponent {
   async saveProfile() {
     try {
       // Save user profile logic
-      const user = await Auth.currentAuthenticatedUser();
+      const user = await signUp({
+        username: this.user.columbiaEmail,
+        password: this.user.password,
+      });
       console.log('User profile saved:', this.user, user);
     } catch (error) {
       console.error('Profile save failed:', error);

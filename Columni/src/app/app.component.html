@@ -1,14 +1,18 @@
-<div *ngIf="shouldDisplayHeader" class="header">
-  <div>
-    <button mat-button (click)="navigateTo('api/messages/1/page/1')">Messaging</button>
-    <button mat-button (click)="navigateTo('api/posts/1/page/1')">Social Posts</button>
-    <button mat-button (click)="navigateTo('api/posts/2/page/1')">Job Posts</button>
-    <button mat-button (click)="navigateTo('api/posts/3/page/1')">Event Posts</button>
-    <button mat-button (click)="navigateTo('api/userProfile/1')">User Profile</button>
-    <button mat-button (click)="navigateTo('api/users/page/1')">All Users</button>
-    <button mat-button (click)="navigateTo('api/login')">Logout</button>
+<amplify-authenticator>
+  <ng-template amplifySlot="authenticated" let-user="user" let-signOut="signOut">
+    <div class="header">
+      <div>
+        <button mat-button (click)="navigateTo('api/messages/1/page/1')">Messaging</button>
+        <button mat-button (click)="navigateTo('api/posts/1/page/1')">Social Posts</button>
+        <button mat-button (click)="navigateTo('api/posts/2/page/1')">Job Posts</button>
+        <button mat-button (click)="navigateTo('api/posts/3/page/1')">Event Posts</button>
+        <button mat-button (click)="navigateTo('api/userProfile/1')">User Profile</button>
+        <button mat-button (click)="navigateTo('api/users/page/1')">All Users</button>
+        <button mat-button (click)="signOut()">Logout</button>
+      </div>
+    </div>
+  </ng-template>
+  <div class="content">
+    <router-outlet></router-outlet>
   </div>
-</div>
-<div class="content">
-  <router-outlet></router-outlet>
-</div>
+</amplify-authenticator>

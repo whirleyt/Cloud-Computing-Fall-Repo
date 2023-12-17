@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { MessageService } from './message.service';
+import { MessageService } from './message.service';
 
 @Component({
   selector: 'app-messages',
@@ -15,10 +15,8 @@ export class MessagesComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
-//     ,
-//     private messageService: MessageService
-  ) { }
+    private router: Router,
+    private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -29,10 +27,11 @@ export class MessagesComponent implements OnInit {
 
   fetchPosts(): void {
     console.log("userID:" + this.userID + ", page:" + this.currentPage);
-//     this.messageService.getMessages(this.userID, this.currentPage)
-//       .subscribe((data: any) => {
-//         this.messages = data;
-//       },
+    this.messageService.getMessages(this.userID, this.currentPage)
+      .subscribe((data: any) => {
+        this.messages = data;
+        console.log(this.messages);
+      })
   }
 
   navigateToPage(page: number): void {

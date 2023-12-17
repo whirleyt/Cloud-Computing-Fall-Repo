@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Auth } from 'aws-amplify';
+import { AuthError, signIn } from '@aws-amplify/auth';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,11 @@ export class LoginComponent {
 
   async login() {
     try {
-      const user = await Auth.signIn(this.username, this.password);
+      // Use specific authentication functions
+      const user = await signIn({
+        username: this.username,
+        password: this.password,
+      });
       console.log('User signed in:', user);
       this.router.navigate(['/api/posts']); // Adjust the route as needed
     } catch (error) {

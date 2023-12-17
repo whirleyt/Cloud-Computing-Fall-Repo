@@ -3,7 +3,7 @@ import psycopg2
 
 app = Flask(__name__)
 
-conn = psycopg2.connect('http://ec2-3-217-79-42.compute-1.amazonaws.com:8011/')
+conn = psycopg2.connect('http://ec2-3-217-79-42.compute-1.amazonaws.com:8011')
 cur = conn.cursor()
 
 # API Routes

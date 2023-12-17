@@ -9,8 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Amplify } from 'aws-amplify';
+import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +21,8 @@ import { EventPostComponent } from './event-post/event-post.component';
 import { SocialPostComponent } from './social-post/social-post.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './messages/message.service';
+
 import { UsersComponent } from './users/users.component';
 import { PostCommentsComponent } from './post-comments/post-comments.component';
 import { PostLikesComponent } from './post-likes/post-likes.component';
@@ -53,12 +56,13 @@ import { HomeComponent } from './home/home.component';
     MatTabsModule,
     MatSelectModule,
     MatDatepickerModule,
-    //AmplifyAngularModule,
-    RouterModule
+    RouterModule,
+    AmplifyAuthenticatorModule,
+    HttpClientModule
   ],
   providers: [
-//     MessageService,
-      // AmplifyService
+    MessageService,
+
 
   ],
   bootstrap: [AppComponent]
