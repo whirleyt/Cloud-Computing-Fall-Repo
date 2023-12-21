@@ -20,6 +20,8 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
+.editorconfig
+AngularProject.iml
 
 # Visual Studio Code
 .vscode/*
@@ -43,5 +45,3 @@ testem.log
 Thumbs.db
 Columni/.vscode/
 .vscode/
-.editorconfig
-AngularProject.iml
