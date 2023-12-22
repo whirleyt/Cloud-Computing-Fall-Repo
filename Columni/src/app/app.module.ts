@@ -43,7 +43,7 @@ import { HomeComponent } from './home/home.component';
     PostCommentsComponent,
     PostLikesComponent,
     GuestLoginComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

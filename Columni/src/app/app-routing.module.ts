@@ -13,7 +13,7 @@ import { PostLikesComponent } from './post-likes/post-likes.component';
 import { GuestLoginComponent } from './guest-login/guest-login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'api/login', pathMatch: 'full' },
+ // { path: '', redirectTo: 'api/login', pathMatch: 'full' },
   { path: 'api/posts/:postTypeID', redirectTo: 'api/posts/:postTypeID/page/1', pathMatch: 'full' },
   { path: 'api/messages', redirectTo: 'api/messages/:userID/page/:page', pathMatch: 'full' },
   { path: 'api/messages/:userID/:messageThreadID', redirectTo: 'api/messages/:userID/:messageThreadID/page/:page', pathMatch: 'full' },
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'api/createProfile', component: CreateProfileComponent },
   { path: 'api/posts/1/page/:page', component: SocialPostComponent },
   { path: 'api/posts/1/newPost', component: SocialPostComponent },
-  { path: 'api/posts/2/page/:page', component: JobPostComponent },
+  { path: 'api/posts/2', component: JobPostComponent },
   { path: 'api/posts/2/newPost', component: JobPostComponent },
   { path: 'api/posts/3/page/:page', component: EventPostComponent },
   { path: 'api/posts/3/newPost', component: EventPostComponent },
