@@ -5,7 +5,16 @@ import jwt
 import datetime
 from flask_cors import CORS
 
+
+# Middleware function to log incoming requests
+def log_requests_middleware():
+    # Log the incoming request
+    print(f"Middleware Request Log: {request.method} {request.path}")
+
 app = Flask(__name__)
+
+# Apply the middleware to all routes
+app.before_request(log_requests_middleware)
 
 CORS(app)
 
@@ -45,6 +54,8 @@ def __init__(self, user_message_id: int, user_id: int, message_id: int, message_
     self.message_id = message_id
     self.message_contents = message_contents
     self.creation_dt = creation_dt
+
+
 
 @app.route('/api/messages/<int:user_id>', methods=['GET'])
 def get_messages(user_id):
