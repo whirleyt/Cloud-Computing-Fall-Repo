@@ -51,10 +51,11 @@ class RequestResource:
   @classmethod
   async def fetch(cls, session, resource):
       url = resource["url"]
-      print("Calling URL = ", url)
+      print("Calling: ", url)
       async with session.get(url) as response:
           t = await response.json()
-          print("URL ", url, "returned", str(t))
+          #print("URL ", url, "returned", str(t))
+          print("Received: " + resource["resource"])
           result = {
               "resource": resource["resource"],
               "data": t
@@ -62,6 +63,7 @@ class RequestResource:
       return result
 
 async def get_resources_async():
+    print()
     full_result = None
     start_time = time.time()
     async with aiohttp.ClientSession() as session:
@@ -73,17 +75,20 @@ async def get_resources_async():
             full_result[response["resource"]] = response["data"]
         end_time = time.time()
         full_result["elapsed_time"] = end_time - start_time
+        
 
         return full_result
 
 
 async def get_resources_sync():
+    print()
     full_result = None
     start_time = time.time()
 
     full_result = {}
 
     for r in RequestResource.resources:
+        print("Calling: ", r["url"])
         response = requests.get(r["url"])
         print("Received: " + r["resource"])
         full_result[r["resource"]] = response.json()
