@@ -3,7 +3,7 @@ import psycopg2
 
 app = Flask(__name__)
 
-POSTS_URL = 'https://posts-microservice.ue.r.appspot.com/'
+POSTS_URL = 'https://ecbm4040-spr2139.uc.r.appspot.com/'
 
 PAGE_SIZE = 10
 
