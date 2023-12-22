@@ -42,10 +42,10 @@ class RequestResource:
           "resource": "users",
           "url": 'https://messages-microservice.ue.r.appspot.com/api/users'
       },
-      #{
-      #    "resource": "posts",
-      #    "url": 'https://posts-microservice.ue.r.appspot.com/'
-      #}
+      {
+          "resource": "posts",
+          "url": 'https://ecbm4040-spr2139.uc.r.appspot.com/api/posts'
+      }
   ]
 
   @classmethod
