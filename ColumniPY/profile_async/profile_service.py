@@ -36,16 +36,16 @@ class RequestResource:
   resources = [
       {
           "resource": "messages",
-          "url": 'https://messages-microservice.ue.r.appspot.com/api/messages'
+          "url": 'https://messages-microservice.ue.r.appspot.com/api/users/2'
       },
       {
           "resource": "users",
-          "url": 'https://messages-microservice.ue.r.appspot.com/api/users'
+          "url": 'http://ec2-3-217-79-42.compute-1.amazonaws.com:8011/profile/1'
       },
-      #{
-      #    "resource": "posts",
-      #    "url": 'https://posts-microservice.ue.r.appspot.com/'
-      #}
+      {
+          "resource": "posts",
+          "url": 'https://ecbm4040-spr2139.uc.r.appspot.com/api/posts'
+      }
   ]
 
   @classmethod
