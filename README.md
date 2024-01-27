@@ -1,21 +1,21 @@
 # Columni
 
-## Enhance Microservices Implementation
+Enhance Microservices Implementation
 
-## Events, Notifications, Pub/Sub
+Events, Notifications, Pub/Sub
 
-## Composition/Aggregators
+Composition/Aggregators
 
-## API Gateway
+API Gateway
 
-## Single Sign-On (SSO)
+Single Sign-On (SSO)
 
-## External API
+External API
 
-## Middleware
+Middleware
 
-## CI/CD
+CI/CD
 
-## Infrastructure As Code
+Infrastructure As Code
 
-## GraphQL
+GraphQL
