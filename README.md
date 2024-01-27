@@ -1,6 +1,6 @@
 # Columni
 
-Enhance Microservices Implementation
+Enhanced Microservices Implementation
 
 Events, Notifications, Pub/Sub
 
